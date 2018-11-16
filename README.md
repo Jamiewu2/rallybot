@@ -1,1 +1,1 @@
-# rallybot
+# Rallybot: Slack Integration with Rally (CA Agile Central)

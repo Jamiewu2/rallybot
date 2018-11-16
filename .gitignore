@@ -1,0 +1,44 @@
+# Ignore IDE stuff
+**/.idea/**
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.vscode
+tags
+gradle-wrapper.properties
+
+# Ignore Runtime files
+**/target/**
+/target/**
+**/out/**
+**/*.log
+**/*.log.*
+**/.gradle/**
+**/classes
+**/.gradletasknamecache
+**/.slcache
+build.properties
+.jest-test-results.json
+
+#build output
+**/build
+**/out
+**/.gradle_build
+
+# Mac OS files
+.DS_Store
+
+# backup files
+*~
+
+# vim
+*.swp
+.vimtags
+.tags
+.ensime
+.ensime_cache
+
+#config
+config.json
