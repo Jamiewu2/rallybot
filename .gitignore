@@ -39,6 +39,3 @@ build.properties
 .tags
 .ensime
 .ensime_cache
-
-#config
-config.json
