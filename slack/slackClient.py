@@ -38,6 +38,8 @@ class RallyBotClient:
         # This is where you start to implement more commands!
         if command.startswith(RallyBotClient.EXAMPLE_COMMAND):
             response = self.rally_client.get_users()
+        elif command.startswith("list"):
+            response = self.rally_client.get_user_stories()
 
         # Sends the response back to the channel
         self.slack_client.api_call(
