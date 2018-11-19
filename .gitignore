@@ -39,3 +39,6 @@ build.properties
 .tags
 .ensime
 .ensime_cache
+
+#python venv
+/venv
