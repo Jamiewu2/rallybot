@@ -1,4 +1,3 @@
-import os
 import time
 import re
 
@@ -34,19 +33,23 @@ class RallyBotClient:
         default_response = "Not sure what you mean. Try *{}*.".format(RallyBotClient.EXAMPLE_COMMAND)
 
         # Finds and executes the given command, filling in response
-        response = None
+        responses = None
         # This is where you start to implement more commands!
         if command.startswith(RallyBotClient.EXAMPLE_COMMAND):
-            response = self.rally_client.get_users()
+            responses = self.rally_client.get_users()
         elif command.startswith("list"):
-            response = self.rally_client.get_user_stories()
+            responses = self.rally_client.get_user_stories()
+        elif command.startswith("changes"):
+            responses = self.rally_client.get_changes()
 
         # Sends the response back to the channel
-        self.slack_client.api_call(
-            "chat.postMessage",
-            channel=channel,
-            text=response or default_response
-        )
+        responses = responses or default_response  # TODO add help message
+        for response in responses:
+            self.slack_client.api_call(
+                "chat.postMessage",
+                channel=channel,
+                text=response
+            )
 
     def parse_bot_commands(self, slack_events):
         """
