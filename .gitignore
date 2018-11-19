@@ -26,6 +26,7 @@ build.properties
 **/build
 **/out
 **/.gradle_build
+*.pyc
 
 # Mac OS files
 .DS_Store
@@ -42,3 +43,6 @@ build.properties
 
 #python venv
 /venv
+
+#config file
+config.json
